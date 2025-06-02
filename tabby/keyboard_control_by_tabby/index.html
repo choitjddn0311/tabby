@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Trail with Palette</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+        #circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        .color-palette {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        #colorPicker {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            border: 1px solid #000;
+        }
+        #notification {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            width: 350px;
+            height: 90px;
+            text-align: center;
+            align-content: center;
+        }
+        #timeline {
+            width: 100%;
+            height: 5px;
+            background-color: gray;
+        }
+        #progress {
+            height: 100%;
+            width: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="trailCanvas"></canvas>
+    <div id="circle"></div>
+    <div class="color-palette">
+        <input type="color" id="colorPicker" title="Choose your color">
+    </div>
+    <div id="notification">
+        <div id="message"></div>
+        <div id="timeline">
+            <div id="progress"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
